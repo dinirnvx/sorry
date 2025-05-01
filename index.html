@@ -39,19 +39,32 @@
             margin-bottom: 1.5em;
         }
 
+        .button-group {
+            display: flex;
+            gap: 1em;
+        }
+
         button {
-            background-color: #ff6b6b;
-            color: white;
             border: none;
             padding: 0.8em 1.5em;
             border-radius: 6px;
             font-size: 1em;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: transform 0.2s ease;
         }
 
         button:hover {
-            background-color: #e64949;
+            transform: scale(1.05);
+        }
+
+        .yes {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .no {
+            background-color: #dc3545;
+            color: white;
         }
 
         .friendship-animation {
@@ -60,7 +73,6 @@
             margin-bottom: 20px;
         }
 
-        /* Optional: Animate SVG path */
         .shake {
             animation: shake 1s infinite alternate ease-in-out;
         }
@@ -83,6 +95,10 @@
 
     <h1>SORRY HELZA</h1>
     <p>km mau kpn maafin ak?</p>
-    <button onclick="alert('ok')">Maafkan Aku</button>
+
+    <div class="button-group">
+        <button class="yes" onclick="alert('BJIR')">maafin</button>
+        <button class="no" onclick="alert('kntl')">gk</button>
+    </div>
 </body>
 </html>
