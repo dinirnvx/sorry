@@ -14,12 +14,18 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
             color: #dc3545;
             font-size: 3em;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.3em;
         }
 
         p {
@@ -29,11 +35,28 @@
             border-radius: 8px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+
+        button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.8em 1.5em;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #c82333;
         }
     </style>
 </head>
 <body>
     <h1>SORRY HELZA</h1>
-    <p>km mau kpn maafin ak?.</p>
+    <p>Km mau kpn maafin ak?</p>
+    <button onclick="alert('Terima kasih sudah memaafkan 😊')">Maafkan Aku</button>
 </body>
 </html>
