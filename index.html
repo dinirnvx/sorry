@@ -15,11 +15,12 @@
             text-align: center;
             height: 100vh;
             margin: 0;
-            animation: fadeIn 2s ease;
+            overflow: hidden;
+            animation: fadeInPage 1.5s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -27,6 +28,12 @@
             color: #ff6b6b;
             font-size: 3em;
             margin-bottom: 0.3em;
+            animation: fadeInText 2s ease;
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         p {
@@ -37,11 +44,13 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             font-size: 1.2em;
             margin-bottom: 1.5em;
+            animation: fadeInText 2.5s ease;
         }
 
         .button-group {
             display: flex;
             gap: 1em;
+            animation: fadeInText 3s ease;
         }
 
         button {
@@ -50,7 +59,7 @@
             border-radius: 6px;
             font-size: 1em;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         button:hover {
@@ -71,21 +80,30 @@
             width: 200px;
             height: 200px;
             margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
         }
 
-        .shake {
-            animation: shake 1s infinite alternate ease-in-out;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        @keyframes shake {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-5px); }
+        .emoji {
+            font-size: 1.5em;
+            animation: wiggle 1.5s infinite alternate ease-in-out;
+            display: inline-block;
+            margin-left: 8px;
+        }
+
+        @keyframes wiggle {
+            from { transform: rotate(-5deg); }
+            to { transform: rotate(5deg); }
         }
     </style>
 </head>
 <body>
     <!-- SVG ilustrasi persahabatan -->
-    <svg class="friendship-animation shake" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+    <svg class="friendship-animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
         <circle cx="20" cy="20" r="10" fill="#ffcccb"/>
         <circle cx="44" cy="20" r="10" fill="#add8e6"/>
         <path d="M14 34c0-5 10-5 10 0v10h-10v-10z" fill="#ffa07a"/>
@@ -94,10 +112,10 @@
     </svg>
 
     <h1>SORRY HELZA</h1>
-    <p>km mau kpn maafin ak?</p>
+    <p>km mau kpn maafin ak?<span class="emoji">❤️</span></p>
 
     <div class="button-group">
-        <button class="yes" onclick="alert('BJIR')">maafin</button>
+        <button class="yes" onclick="alert('bjir')">maafin</button>
         <button class="no" onclick="alert('kntl')">gk</button>
     </div>
 </body>
